@@ -1,2 +1,5 @@
 [project]
 name = Rockstar Networking
+
+[servers.production]
+target = ghpages://rockstarnet/rockstarnet.github.io
