@@ -1,0 +1,7 @@
+{
+    "title": "Rockstart Networking",
+    "main-menu": [
+        ["/", "Início"],
+        ["/showcase", "Showcase"],
+        ["/contato", "Contato"] ]
+}
