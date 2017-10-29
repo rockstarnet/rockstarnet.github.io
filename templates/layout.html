@@ -37,16 +37,18 @@
             </li>
             {% endfor %}
           </ul>
+          <!-- 
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
+          --> 
         </div>
       </nav>
     </header>
 
     <main role="main">
-
+      {% if this._path == '/' %}
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -55,12 +57,13 @@
               <div class="carousel-caption text-left">
                 <h1>Rockstar Networking</h1>
                 <p>Somos especializados em cabeamento estruturado de alta qualidade. Temos anos de experiência e clientes muito satisfeitos</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Peça um orçamento</a></p>
+                <p><a class="btn btn-lg btn-primary" href="#contact" role="button">Peça um orçamento</a></p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {% endif %}
 
       <!-- Marketing messaging and featurettes
       ================================================== -->
@@ -68,79 +71,45 @@
 
       <div class="container marketing">
 
-        {% block body %}{% endblock %}
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
 
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+    {% if this._path == '/' %}
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Trabalhamos com paixão!</h2>
+        <p class="lead">Gostamos do que fazemos e temos orgulho do nosso trabalho.
+        Fazemos questão de executar nossos projetos com a mais alta qualidade.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="featurette-image img-fluid mx-auto" src="{{ '/static/images/passionate-worker-500.jpg'|url }}" alt="Trabalhando com paixão">
+      </div>
+    </div>
 
+    <hr class="featurette-divider">
 
-        <!-- START THE FEATURETTES -->
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Robustez <span class="text-muted"><small>Durabilidade</small></span></h2>
+        <p class="lead">Construímos infraestrutura para durar. Utilizamos os padrões mais altos da indústria, garantindo
+        retorno e durabilidade do seu investimento.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" src="{{ '/static/images/robustez-500.jpg'|url }}" alt="Infraestrutura robusta">
+      </div>
+    </div>
+    <hr class="featurette-divider">
+    {% endif %}
 
-        <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+    {% block body %}{% endblock %}
 
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- /END THE FEATURETTES -->
-
+    <hr class="featurette-divider">
       </div><!-- /.container -->
-
 
       <!-- FOOTER -->
       <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
+        <p class="float-right"><a href="#">Voltar ao começo</a></p>
         <p>&copy; Copyright 2017 by Rockstar Networking.</p>
       </footer>
     </main>

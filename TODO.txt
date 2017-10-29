@@ -1,0 +1,2 @@
+[ ] Mover o conteúdo do layout para o content
+[ ] Adicionar galeria de fotos no showcase
